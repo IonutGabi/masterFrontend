@@ -1,0 +1,165 @@
+@use "base" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 13px;
+  flex: 1;
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .base-color {
+    background-color: $box-base-color-first-row;
+    color: $font-box-base-color;
+    width: 100px;
+  }
+
+  .darken-1 {
+    @include darken-effect($box-base-color-first-row, 2%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .darken-2 {
+    @include darken-effect($box-base-color-first-row, 5%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .darken-3 {
+    @include darken-effect($box-base-color-first-row, 10%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .darken-4 {
+    @include darken-effect($box-base-color-first-row, 15%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .lighten-1 {
+    @include lighten-effect($box-base-color-first-row, 15%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .lighten-2 {
+    @include lighten-effect($box-base-color-first-row, 25%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .lighten-3 {
+    @include lighten-effect($box-base-color-first-row, 30%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+
+  .lighten-4 {
+    @include lighten-effect($box-base-color-first-row, 40%);
+    .color-box-text {
+      @include box-color-properties();
+    }
+  }
+}
+
+.container-2 {
+  @extend .container-1;
+
+  .base-color {
+    background-color: $box-base-color-second-row;
+  }
+  .darken-1 {
+    @include darken-effect($box-base-color-second-row, 5%);
+  }
+  .darken-2 {
+    @include darken-effect($box-base-color-second-row, 10%);
+  }
+
+  .darken-3 {
+    @include darken-effect($box-base-color-second-row, 15%);
+  }
+
+  .darken-4 {
+    @include darken-effect($box-base-color-second-row, 20%);
+  }
+
+  .lighten-1 {
+    @include lighten-effect($box-base-color-second-row, 15%);
+  }
+
+  .lighten-2 {
+    @include lighten-effect($box-base-color-second-row, 25%);
+  }
+
+  .lighten-3 {
+    @include lighten-effect($box-base-color-second-row, 30%);
+  }
+
+  .lighten-4 {
+    @include lighten-effect($box-base-color-second-row, 40%);
+  }
+}
+
+.container-3 {
+  @extend .container-1;
+
+  .base-color {
+    background-color: $box-base-color-third-row;
+  }
+  .darken-1 {
+    @include darken-effect($box-base-color-third-row, 5%);
+  }
+  .darken-2 {
+    @include darken-effect($box-base-color-third-row, 10%);
+  }
+
+  .darken-3 {
+    @include darken-effect($box-base-color-third-row, 15%);
+  }
+  .darken-4 {
+    @include darken-effect($box-base-color-third-row, 20%);
+  }
+
+  .lighten-1 {
+    @include lighten-effect($box-base-color-third-row, 15%);
+  }
+
+  .lighten-2 {
+    @include lighten-effect($box-base-color-third-row, 25%);
+  }
+
+  .lighten-3 {
+    @include lighten-effect($box-base-color-third-row, 30%);
+  }
+
+  .lighten-4 {
+    @include lighten-effect($box-base-color-third-row, 50%);
+  }
+}

@@ -1,0 +1,40 @@
+@use "temaB" as *;
+
+$font-page: cursive;
+$borders-color: grey;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: $font-page;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $borders-color;
+  width: 8em;
+  height: 100px;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 10px 5px;
+}

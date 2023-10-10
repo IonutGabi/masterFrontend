@@ -1,0 +1,31 @@
+$main-color: blue;
+$bg-warning: cyan;
+$font: "Arial";
+
+@mixin shadow-effect() {
+  box-shadow: 10px 12px 5px rgba(0, 0, 0, 0.8);
+}
+
+.box {
+  border-radius: 5px;
+}
+
+.base {
+  background-color: $main-color;
+}
+
+.important {
+  background-color: darken($color: $main-color, $amount: 30%);
+}
+
+.warning {
+  background-color: $bg-warning;
+}
+
+.paragraph {
+  font-family: $font;
+}
+
+.shadow {
+  @include shadow-effect();
+}

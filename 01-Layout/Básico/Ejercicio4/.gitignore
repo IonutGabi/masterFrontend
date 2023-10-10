@@ -1,0 +1,7 @@
+# ignora la carpeta dist
+
+dist
+
+# ignora la carpeta parcel-cache
+
+.parcel-cache

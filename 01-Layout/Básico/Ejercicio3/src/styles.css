@@ -38,7 +38,7 @@ span {
   padding: 15px;
 }
 
-nav span:focus-within {
+nav span:hover {
   background-color: #133f57;
 }
 @media screen and (max-width: 600px) {

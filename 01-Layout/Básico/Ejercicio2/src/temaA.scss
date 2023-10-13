@@ -1,26 +1,7 @@
 $main-color: red;
+$bg-warning: #ffb3b3;
 $font: "Arial";
 
 @mixin shadow-effect() {
   box-shadow: -10px 12px 5px rgba(0, 0, 0, 0.8);
-}
-
-.base {
-  background-color: $main-color;
-}
-
-.important {
-  background-color: darken($color: $main-color, $amount: 25%);
-}
-
-.warning {
-  background-color: lighten($color: $main-color, $amount: 35%);
-}
-
-.first-paragraph {
-  font-family: $font;
-}
-
-.shadow {
-  @include shadow-effect();
 }

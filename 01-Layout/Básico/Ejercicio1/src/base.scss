@@ -1,17 +1,8 @@
-$box-base-color-first-row: red;
-$box-base-color-second-row: blue;
-$box-base-color-third-row: green;
+$color-base1: red;
+$color-base2: blue;
+$color-base3: green;
 $font-box-base-color: white;
 $font-blackness: bolder;
-
-@mixin darken-effect($color, $porcentage) {
-  background-color: darken($color: $color, $amount: $porcentage);
-}
-
-@mixin lighten-effect($color, $porcentage) {
-  background-color: lighten($color: $color, $amount: $porcentage);
-}
-
 @mixin box-color-properties() {
   color: darken($color: $font-box-base-color, $amount: 25%);
   font-weight: $font-blackness;

@@ -1,4 +1,4 @@
-@use "temaB" as *;
+@use "temaB" as theme;
 
 $font-page: cursive;
 $borders-color: grey;
@@ -37,4 +37,24 @@ body {
   flex-direction: column;
   gap: 13px;
   margin: 10px 5px;
+}
+
+.base {
+  background-color: theme.$main-color;
+}
+
+.important {
+  background-color: darken($color: theme.$main-color, $amount: 25%);
+}
+
+.warning {
+  background-color: theme.$bg-warning;
+}
+
+.first-paragraph {
+  font-family: theme.$font;
+}
+
+.shadow {
+  @include theme.shadow-effect();
 }

@@ -1,0 +1,15 @@
+# Ignora la carpeta .parcel-cache
+
+.parcel-cache
+
+# Ignora la carpeta dist 
+
+dist
+
+#Ignora la carpeta node_modules
+
+node_modules
+
+# Ingora el archivo package-lock-json
+
+package-lock.json

@@ -5,7 +5,7 @@ $bg-color-nav: #474704;
 $bg-color-cards: #fff;
 $border-color: rgb(206, 203, 203);
 $font-page: "Arial";
-$height-device-responsive: 130%;
+$height-device-responsive: 125%;
 $default-max-width-application: 1280px;
 
 * {
@@ -92,29 +92,6 @@ nav {
       width: 107%;
       padding: 10px;
       background-color: $bg-color-nav-footer;
-
-      @media (max-width: 768px) {
-        width: 20%;
-        padding: 15px;
-      }
-    }
-
-    @media (max-width: 800px) {
-      position: sticky;
-      top: 40px;
-    }
-    @media (max-width: 768px) {
-      position: sticky;
-      top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      text-align: center;
-      gap: 10px;
-      width: 100%;
     }
   }
   .menu-title {
@@ -123,39 +100,50 @@ nav {
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+  }
 
-    @media (max-width: 800px) {
+  @media (max-width: 768px) {
+    height: $height-device-responsive;
+    margin-left: 0;
+    padding: 5px;
+    width: 100%;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      width: 100%;
+      position: sticky;
+      top: 40px;
+
+      li {
+        width: 20%;
+        padding: 15px;
+      }
+    }
+
+    .menu-title {
       position: sticky;
       top: 2px;
       bottom: 2px;
-    }
-
-    @media (max-width: 768px) {
-      position: sticky;
-      top: 2px;
-      bottom: 2px;
-    }
-
-    @media (max-width: 768px) {
       display: none;
     }
   }
 
   @media (max-width: 800px) {
     height: $height-device-responsive;
-  }
 
-  @media (max-width: 768px) {
-    height: $height-device-responsive;
-  }
-  @media (max-width: 768px) {
-    height: 125%;
-  }
-
-  @media (max-width: 768px) {
-    margin-left: 0;
-    padding: 5px;
-    width: 100%;
+    ul {
+      position: sticky;
+      top: 40px;
+    }
+    .menu-title {
+      position: sticky;
+      top: 2px;
+      bottom: 2px;
+    }
   }
 }
 

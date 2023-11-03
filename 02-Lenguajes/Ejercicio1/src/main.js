@@ -20,15 +20,19 @@ console.log(tail(["Antonio", "Braulio", "Javi"]));
 // Init: Función que devuelve todos los elementos menos el último elemento
 
 const init = (arrayNames) => {
-  const arrayNamesCopy = arrayNames.toSpliced(3, 1);
+  const arrayNamesCopy = arrayNames.filter(
+    (name, index) => index < arrayNames.length - 1
+  );
   return arrayNamesCopy;
 };
 console.log(init(["Manolo", "Victor", "Santi", "Gabi"]));
 
-// Last: Función que devuevle el último elemento del array pasado por párametro
+// Last: Función que devuelve el último elemento del array pasado por párametro
 
 const last = (arrayNames) => {
-  const [, , , lastElement] = arrayNames;
+  const lastElement = arrayNames.find(
+    (element, index) => index === arrayNames.length - 1
+  );
   return lastElement;
 };
 

@@ -1,0 +1,10 @@
+# Ignora la carpeta node_modules
+
+node_modules
+
+# Ignora el archivo package-lock.json, y los readme
+
+package-lock.json
+*.md
+
+

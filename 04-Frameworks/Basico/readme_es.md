@@ -1,6 +1,6 @@
 # 03 List
 
-> _[!IMPORTANT]_
+> [!IMPORTANT]
 > Autentificación: está en pods/login/login.container.tsx
 
 ## Resumen

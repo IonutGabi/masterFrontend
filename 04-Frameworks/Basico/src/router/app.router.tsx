@@ -4,7 +4,8 @@ import { switchRoutes } from "./routes";
 import { MemberListScene } from "@/scenes/member-list.scene";
 import { MemberDetailScene } from "@/scenes/member-detail.scene";
 import { DashboardScene } from "@/scenes/dashboard.scene";
-import { CharactersListScene } from "@/scenes/rickandmortycharacters-list.scene";
+import { CharactersListScene } from "@/scenes/rickandmorty-characters-list.scene";
+import { CharacterDetailScene } from "@/scenes/rickandmorty-character-detail.scene";
 
 export const AppRouter = () => {
   return (
@@ -16,6 +17,10 @@ export const AppRouter = () => {
         <Route
           path={switchRoutes.characterList}
           element={<CharactersListScene />}
+        />
+        <Route
+          path={switchRoutes.characterDetail}
+          element={<CharacterDetailScene />}
         />
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,6 @@
-import { MemberApiModel } from "./api.model";
+import { MemberListApiModel } from "./api.model";
 
-export const getMembers = (org: string): Promise<MemberApiModel[]> => {
+export const getMembers = (org: string): Promise<MemberListApiModel[]> => {
   return fetch(`${process.env.GITHUB_API}/orgs/${org}/members`).then(
     (response) => response.json()
   );
@@ -9,7 +9,7 @@ export const getMembers = (org: string): Promise<MemberApiModel[]> => {
 export const getMembersByPage = (
   org: string,
   value: number
-): Promise<MemberApiModel[]> => {
+): Promise<MemberListApiModel[]> => {
   return fetch(
     `${process.env.GITHUB_API}/orgs/${org}/members?page=${value}`
   ).then((response) => response.json());

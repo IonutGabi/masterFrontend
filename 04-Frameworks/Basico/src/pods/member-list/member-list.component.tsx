@@ -1,11 +1,11 @@
 import React from "react";
-import { Pagination } from "@mui/material";
-import { MemberViewModel } from "./member-list.vm";
+import { Box, Button, Pagination, TextField } from "@mui/material";
+import { MemberListViewModel } from "./member-list.vm";
 import { routes } from "@/router";
 import { Link } from "react-router-dom";
 
 interface Props {
-  members: MemberViewModel[];
+  members: MemberListViewModel[];
   filter: string;
   page: number;
   onUpdateOfMembersOrg: () => void;
@@ -44,7 +44,9 @@ export const MemberList: React.FC<Props> = (props) => {
           </React.Fragment>
         ))}
       </div>
-      <Pagination count={5} page={page} onChange={controlledPaginacion} />
+      <Box display="flex" justifyContent="center">
+        <Pagination count={5} page={page} onChange={controlledPaginacion} />
+      </Box>
     </>
   );
 };

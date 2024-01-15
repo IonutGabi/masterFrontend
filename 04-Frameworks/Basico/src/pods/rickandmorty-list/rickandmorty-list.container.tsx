@@ -3,16 +3,16 @@ import { CharacterListViewModel } from "./rickandmorty-list.vm";
 import { getAllCharacters, getCharacterByFilter, getPages } from "./api/api";
 import { mapCharacterListToVM } from "./rickandmorty-list.mapper";
 import { CharactersList } from "./rickandmorty-list.component";
-import { useDebounce } from "use-debounce";
+import { useFilter, usePaginacion } from "@/hooks";
+import { PageContext } from "@/core/providers/page/page-rickandmorty.context";
 
 export const CharactersListContainer: React.FC = () => {
-  const [page, setPage] = React.useState<number>(1);
-  const [count, setCount] = React.useState<number>(1);
+  const { page, setPage } = React.useContext(PageContext);
   const [characters, setCharacters] = React.useState<CharacterListViewModel[]>(
     []
   );
-  const [filter, setFilter] = React.useState("");
-  const [debouncedFilter] = useDebounce(filter, 500);
+  const count = usePaginacion();
+  const { filter, setFilter } = useFilter(setCharacters);
 
   const handleChangeEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -21,14 +21,7 @@ export const CharactersListContainer: React.FC = () => {
 
   React.useEffect(() => {
     getAllCharacters(page).then(mapCharacterListToVM).then(setCharacters);
-    getCharacterByFilter(debouncedFilter)
-      .then(mapCharacterListToVM)
-      .then(setCharacters);
-  }, [page, debouncedFilter]);
-
-  React.useEffect(() => {
-    getPages().then(setCount);
-  }, []);
+  }, [page]);
 
   const handleChange = (e: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);

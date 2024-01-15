@@ -1,5 +1,5 @@
 export interface CharacterListViewModel {
-  id: number;
+  id: string;
   image: string;
   name: string;
   status: string;

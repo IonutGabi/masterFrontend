@@ -1,6 +1,8 @@
 import React from "react";
-import { Pagination } from "@mui/material";
+import { Box, Pagination } from "@mui/material";
 import { CharacterListViewModel } from "./rickandmorty-list.vm";
+import { Link } from "react-router-dom";
+import { routesCharacters } from "@/router";
 
 interface Props {
   characters: CharacterListViewModel[];
@@ -26,12 +28,16 @@ export const CharactersList: React.FC<Props> = (props) => {
         {characters.map((character) => (
           <React.Fragment key={character.id}>
             <img src={character.image} alt="Personaje de rick y morty" />
-            <span className="span-style">{character.name}</span>
-            <span className="span-style">{character.status}</span>
+            <Link to={routesCharacters.characterDetail(character.id)}>
+              {character.name}
+            </Link>
+            <span>{character.status}</span>
           </React.Fragment>
         ))}
       </div>
-      <Pagination count={count} page={page} onChange={paginacion} />
+      <Box display="flex" justifyContent="center">
+        <Pagination count={count} page={page} onChange={paginacion} />
+      </Box>
     </>
   );
 };

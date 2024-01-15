@@ -2,12 +2,12 @@ import * as ApiModel from "./api/api.model";
 import * as ViewModel from "./member-list.vm";
 
 export const mapMemberListToVM = (
-  memberList: ApiModel.MemberApiModel[]
-): ViewModel.MemberViewModel[] => memberList.map(mapMemberToVm);
+  memberList: ApiModel.MemberListApiModel[]
+): ViewModel.MemberListViewModel[] => memberList.map(mapMemberToVm);
 
 const mapMemberToVm = (
-  data: ApiModel.MemberApiModel
-): ViewModel.MemberViewModel => ({
+  data: ApiModel.MemberListApiModel
+): ViewModel.MemberListViewModel => ({
   id: data.id,
   login: data.login,
   avatar_url: data.avatar_url,

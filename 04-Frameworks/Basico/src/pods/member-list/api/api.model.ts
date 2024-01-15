@@ -1,4 +1,4 @@
-export interface MemberApiModel {
+export interface MemberListApiModel {
   login: string;
   id: number;
   node_id: string;

@@ -1,12 +1,12 @@
 import React from "react";
-import { MemberViewModel } from "./member-list.vm";
+import { MemberListViewModel } from "./member-list.vm";
 import { OrgFilterContext } from "@/core/providers/org-filter/org-filter.context";
 import { MemberList } from "./member-list.component";
 import { getMembers, getMembersByPage } from "./api/api";
 import { mapMemberListToVM } from "./member-list.mapper";
 
 export const MemberListContainer: React.FC = () => {
-  const [members, setMembers] = React.useState<MemberViewModel[]>([]);
+  const [members, setMembers] = React.useState<MemberListViewModel[]>([]);
   const [page, setPage] = React.useState<number>(1);
   const { filter, setFilter } = React.useContext(OrgFilterContext);
 

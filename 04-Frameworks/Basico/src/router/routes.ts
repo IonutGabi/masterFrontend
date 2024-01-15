@@ -13,14 +13,24 @@ export const switchRoutes: SwitchRoutes = {
   list: "/list",
   detail: "/detail/:login",
   characterList: "/character-list",
-  characterDetail: "/detail/:id",
+  characterDetail: "/character-detail/:id",
 };
 
 interface Routes extends Omit<SwitchRoutes, "detail"> {
   detail: (login: string) => string;
 }
 
+interface RoutesCharacters extends Omit<SwitchRoutes, "characterDetail"> {
+  characterDetail: (id: string) => string;
+}
+
 export const routes: Routes = {
   ...switchRoutes,
   detail: (login: string) => generatePath(switchRoutes.detail, { login }),
+};
+
+export const routesCharacters: RoutesCharacters = {
+  ...switchRoutes,
+  characterDetail: (id: string) =>
+    generatePath(switchRoutes.characterDetail, { id }),
 };

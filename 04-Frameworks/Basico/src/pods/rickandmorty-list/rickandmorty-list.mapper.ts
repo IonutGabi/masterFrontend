@@ -8,8 +8,8 @@ export const mapCharacterListToVM = (
 const mapCharacterToVm = (
   result: ApiModel.CharacterApiModel
 ): ViewModel.CharacterListViewModel => ({
-  id: `${result.id}`,
-  image: result.image,
-  name: result.name,
-  status: result.status,
+  id: `${result.id}` ?? "",
+  image: result.image ?? "",
+  name: result.name ?? "",
+  status: result.status ?? "",
 });

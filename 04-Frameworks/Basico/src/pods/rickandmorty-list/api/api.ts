@@ -5,13 +5,23 @@ export const getAllCharacters = (
 ): Promise<CharacterApiModel[]> => {
   return fetch(`${process.env.RICK_AND_MORTY_API}/character/?page=${value}`)
     .then((response) => response.json())
-    .then((data) => data.results);
+    .then((data) => data.results)
+    .catch((error) => {
+      throw new Error(
+        `Ha ocurrido un error en la recogida de los datos de la API: ${error}`
+      );
+    });
 };
 
 export const getPages = (): Promise<number> => {
   return fetch(`${process.env.RICK_AND_MORTY_API}/character`)
     .then((response) => response.json())
-    .then((data) => data.info.pages);
+    .then((data) => data.info.pages)
+    .catch((error) => {
+      throw new Error(
+        `Ha ocurrido un error en la recogida de los datos de la API: ${error}`
+      );
+    });
 };
 
 export const getCharacterByFilter = (
@@ -19,5 +29,10 @@ export const getCharacterByFilter = (
 ): Promise<CharacterApiModel[]> => {
   return fetch(`${process.env.RICK_AND_MORTY_API}/character/?name=${value}`)
     .then((response) => response.json())
-    .then((data) => data.results);
+    .then((data) => data.results)
+    .catch((error) => {
+      throw new Error(
+        `Ha ocurrido un error en la recogida de los datos de la API: ${error}`
+      );
+    });
 };

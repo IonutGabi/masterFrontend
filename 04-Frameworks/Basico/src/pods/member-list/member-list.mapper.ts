@@ -8,7 +8,7 @@ export const mapMemberListToVM = (
 const mapMemberToVm = (
   data: ApiModel.MemberListApiModel
 ): ViewModel.MemberListViewModel => ({
-  id: data.id,
-  login: data.login,
-  avatar_url: data.avatar_url,
+  id: data.id ?? 0,
+  login: data.login ?? "",
+  avatar_url: data.avatar_url ?? "",
 });

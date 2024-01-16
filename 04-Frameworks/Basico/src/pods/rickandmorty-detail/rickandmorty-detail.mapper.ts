@@ -4,9 +4,9 @@ import * as ViewModel from "./rickandmorty-detail.vm";
 export const mapCharacterFromVm = (
   data: ApiModel.CharacterDetailApiModel
 ): ViewModel.CharacterDetailVm => ({
-  id: data.id,
-  name: data.name,
-  gender: data.gender,
-  image: data.image,
-  species: data.species,
+  id: data.id ?? 0,
+  name: data.name ?? "",
+  gender: data.gender ?? "",
+  image: data.image ?? "",
+  species: data.species ?? "",
 });

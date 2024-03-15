@@ -1,7 +1,4 @@
-import {
-  CharacterApiModel,
-  GetCharacterCollectionResponse,
-} from './character-collection-api.model';
+import { CharacterApiModel } from './character-collection-api.model';
 import { gql } from 'graphql-request';
 import { graphqlClient } from 'core/api/graphql';
 
@@ -24,8 +21,9 @@ export const getCharacterCollection = async (): Promise<
       }
     `;
 
-    const { characters } =
-      await graphqlClient.request<GetCharacterCollectionResponse>(query);
+    const { characters } = await graphqlClient.request<{
+      characters: { results: CharacterApiModel[] };
+    }>(query);
 
     return characters.results;
   } catch (error) {

@@ -12,7 +12,3 @@ export interface CharacterApiModel {
   url: string[];
   created: string;
 }
-
-export interface GetCharacterCollectionResponse {
-  characters: CharacterApiModel[];
-}
